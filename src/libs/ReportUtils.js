@@ -250,9 +250,10 @@ function hasExpensifyGuidesEmails(emails) {
  * @param {Record<String, {lastReadTime, reportID}>|Array<{lastReadTime, reportID}>} reports
  * @param {Boolean} [ignoreDefaultRooms]
  * @param {Object} policies
+ * @param {Boolean} openOnAdminRoom
  * @returns {Object}
  */
-function findLastAccessedReport(reports, ignoreDefaultRooms, policies) {
+function findLastAccessedReport(reports, ignoreDefaultRooms, policies, openOnAdminRoom = false) {
     let sortedReports = sortReportsByLastRead(reports);
 
     if (ignoreDefaultRooms) {
@@ -261,7 +262,15 @@ function findLastAccessedReport(reports, ignoreDefaultRooms, policies) {
             || hasExpensifyGuidesEmails(lodashGet(report, ['participants'], [])));
     }
 
-    return _.last(sortedReports);
+    let adminReport;
+    if (!ignoreDefaultRooms && openOnAdminRoom) {
+        adminReport = _.find(sortedReports, (report) => {
+            const chatType = getChatType(report);
+            return chatType === CONST.REPORT.CHAT_TYPE.POLICY_ADMINS;
+        });
+    }
+
+    return adminReport || _.last(sortedReports);
 }
 
 /**
@@ -976,7 +985,7 @@ function buildOptimisticChatReport(
         lastActionCreated: currentTime,
         notificationPreference,
         oldPolicyName,
-        ownerEmail,
+        ownerEmail: ownerEmail || CONST.REPORT.OWNER_EMAIL_FAKE,
         participants: participantList,
         policyID,
         reportID: generateReportID(),
@@ -1374,6 +1383,16 @@ function getNewMarkerReportActionID(report, sortedAndFilteredReportActions) {
 }
 
 /**
+ * Replace code points > 127 with C escape sequences, and return the resulting string's overall length
+ * Used for compatibility with the backend auth validator for AddComment
+ * @param {String} textComment
+ * @returns {Number}
+ */
+function getCommentLength(textComment) {
+    return textComment.replace(/[^ -~]/g, '\\u????').length;
+}
+
+/**
  * @param {String|null} url
  * @returns {String}
  */
@@ -1478,5 +1497,6 @@ export {
     getOldDotDefaultAvatar,
     getNewMarkerReportActionID,
     canSeeDefaultRoom,
+    getCommentLength,
     openReportFromDeepLink,
 };
