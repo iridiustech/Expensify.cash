@@ -275,6 +275,7 @@ const styles = {
         fontWeight: fontWeightBold,
         fontFamily: fontFamily.EXP_NEUE_BOLD,
         fontSize: variables.fontSizeSmall,
+        lineHeight: variables.lineHeightSmall,
     },
 
     textMicroSupporting: {
@@ -775,6 +776,7 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 15,
+        overflow: 'hidden',
     },
 
     calendarDayContainerSelected: {
