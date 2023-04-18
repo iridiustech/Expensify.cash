@@ -2882,7 +2882,6 @@ const styles = {
         height: variables.sliderKnobSize,
         width: variables.sliderKnobSize,
         borderRadius: variables.sliderKnobSize / 2,
-        top: -variables.sliderBarHeight,
         left: -(variables.sliderKnobSize / 2),
         cursor: 'pointer',
     },
@@ -2892,10 +2891,7 @@ const styles = {
         height: variables.sliderBarHeight,
         borderRadius: variables.sliderBarHeight / 2,
         alignSelf: 'stretch',
-    },
-
-    imageCropRotateButton: {
-        height: variables.iconSizeExtraLarge,
+        justifyContent: 'center',
     },
 
     userSelectText: {
@@ -3134,6 +3130,10 @@ const styles = {
     validateCodeMessage: {
         width: variables.modalContentMaxWidth,
         textAlign: 'center',
+    },
+
+    popoverMaxWidth: {
+        maxWidth: 375,
     },
 };
 
