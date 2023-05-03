@@ -2996,6 +2996,7 @@ const styles = {
         fontSize: 13,
         marginLeft: 4,
         fontWeight: 'bold',
+        fontVariant: ['tabular-nums'],
     },
 
     fontColorReactionLabel: {
@@ -3097,6 +3098,9 @@ const styles = {
 
     whisper: {
         backgroundColor: themeColors.cardBG,
+    },
+    contextMenuItemPopoverMaxWidth: {
+        maxWidth: 375,
     },
 };
 
