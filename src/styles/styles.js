@@ -1020,6 +1020,12 @@ const styles = {
         color: themeColors.textSupporting,
     },
 
+    furtherDetailsText: {
+        fontFamily: fontFamily.EXP_NEUE,
+        fontSize: variables.fontSizeSmall,
+        color: themeColors.textSupporting,
+    },
+
     lh16: {
         lineHeight: 16,
     },
@@ -2099,12 +2105,6 @@ const styles = {
         textTransform: 'capitalize',
     },
 
-    reportTransactionWrapper: {
-        paddingVertical: 8,
-        display: 'flex',
-        flexDirection: 'row',
-    },
-
     settingsPageBackground: {
         flexDirection: 'column',
         width: '100%',
@@ -2161,7 +2161,6 @@ const styles = {
     twoFactorAuthCode: {
         fontFamily: fontFamily.MONOSPACE,
         width: 100,
-        height: 18,
         textAlign: 'center',
     },
 
