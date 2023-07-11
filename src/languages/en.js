@@ -567,7 +567,7 @@ export default {
     },
     twoFactorAuthForm: {
         error: {
-            pleaseFillTwoFactorAuth: 'Please enter your two-factor code',
+            pleaseFillTwoFactorAuth: 'Please enter your two-factor authentication code',
             incorrect2fa: 'Incorrect two-factor authentication code. Please try again.',
         },
     },
@@ -712,7 +712,7 @@ export default {
         error: {
             pleaseFillMagicCode: 'Please enter your magic code',
             incorrectMagicCode: 'Incorrect magic code.',
-            pleaseFillTwoFactorAuth: 'Please enter your two-factor code',
+            pleaseFillTwoFactorAuth: 'Please enter your two-factor authentication code',
         },
     },
     passwordForm: {
@@ -1294,6 +1294,7 @@ export default {
             completed: 'completed task',
             canceled: 'canceled task',
             reopened: 'reopened task',
+            error: 'You do not have the permission to do the requested action.',
         },
         markAsDone: 'Mark as done',
         markAsIncomplete: 'Mark as incomplete',

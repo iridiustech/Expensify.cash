@@ -568,7 +568,7 @@ export default {
     },
     twoFactorAuthForm: {
         error: {
-            pleaseFillTwoFactorAuth: 'Por favor, introduce tu código 2 factores',
+            pleaseFillTwoFactorAuth: 'Por favor, introduce tu código de autenticación de dos factores',
             incorrect2fa: 'Código de autenticación de dos factores incorrecto. Por favor, inténtalo de nuevo',
         },
     },
@@ -714,7 +714,7 @@ export default {
         error: {
             pleaseFillMagicCode: 'Por favor, introduce el código mágico',
             incorrectMagicCode: 'Código mágico incorrecto.',
-            pleaseFillTwoFactorAuth: 'Por favor, introduce tu código 2 factores',
+            pleaseFillTwoFactorAuth: 'Por favor, introduce tu código de autenticación de dos factores',
         },
     },
     passwordForm: {
@@ -1302,7 +1302,8 @@ export default {
         messages: {
             completed: 'tarea completada',
             canceled: 'tarea cancelada',
-            reopened: 'tarea reabierta',
+            reopened: 'tarea reabrir',
+            error: 'No tiene permiso para realizar la acción solicitada.',
         },
         markAsDone: 'Marcar como completada',
         markAsIncomplete: 'Marcar como incompleta',
